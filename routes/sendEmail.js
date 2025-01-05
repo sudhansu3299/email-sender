@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const app = express();
 app.use(cors({
