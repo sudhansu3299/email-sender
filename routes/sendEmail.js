@@ -4,7 +4,9 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey('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');
 
 const app = express();
-app.use(cors());  // Enable CORS
+app.use(cors({
+    origin: 'https://sudhansu-s-suprise.netlify.app' // Replace with your Netlify URL
+}));
 app.use(express.json());
 
 app.post('/api/sendEmail', async (req, res) => {
